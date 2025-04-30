@@ -1,0 +1,4 @@
+A Java program with a terminal-based search engine and trivia game. As of 4/29/2025, I have built a simple TUI (Text User Interface) 
+to accomodate the user with searching a particular National Park, looking for a state, and implementing an interactive game. 
+I need to create more classes and write code to help the user access more data of the park. Visitor count, climate, location 
+(in Latitude and longitude), and other facts about the national park.
