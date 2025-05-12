@@ -7,20 +7,17 @@ using namespace std;
 
 class Database {
 private:
-    //Private variables
     string parkName, stateName, coordinateLocation, dateEstablished, area2023;
     int recreationVisitors;
     string climate, description;
 
 public:
-    //Constructor
-    Database(); //End Database() constructor
+    Database();
+    Database(string parkNameInput, string stateNameInput, string coordinateLocationInput,
+             string dateEstablishedInput, string area2023Input, int recreationVisitorsInput,
+             string climateInput, string descriptionInput);
 
-//NOT SURE what this does yet
-    Database(string parkNameInput, string stateNameInput, string coordinateLocationInput, string dateEstablishedInput,
-             string area2023Input, int recreationVisitorsInput, string climateInput, string descriptionInput);
-
-    //Setter section for the data.
+    // Setters
     void setParkName(string parkNameInput);
     void setStateName(string stateNameInput);
     void setCoordinateLocation(string coordinateLocationInput);
@@ -30,7 +27,7 @@ public:
     void setClimate(string climateInput);
     void setDescription(string descriptionInput);
 
-    //Getter section for the data.
+    // Getters
     string getParkName() const;
     string getStateName() const;
     string getCoordinateLocation() const;
@@ -41,9 +38,6 @@ public:
     string getDescription() const;
 
     string toString() const;
-
-//USED AI in this section to explain how @Override works and why my information came out as addresses (GIBBERISH@NUMBERS).
-    friend ostream& operator<<(ostream& os, const Database& db);
 };
 
-#endif
+#endif // DATABASE_H

@@ -10,12 +10,16 @@
                 "main.cpp",
                 "Database.cpp",
                 "DataHandler.cpp",
+                "Database.h",
+                "DataHandler.h",
+                "ParkSearch.cpp",
+                "ParkSearch.h",
                 "-o",
                 "main"
             ],
             "group": "build",
             "problemMatcher": [
-                "$gcc"
+                "$gcc" //Changed from g++ to gcc.
             ],
             "detail": "Generated task by VS Code"
         },
@@ -34,7 +38,7 @@
                 "cwd": "${fileDirname}"
             },
             "problemMatcher": [
-                "$gcc"
+                "$g++"
             ],
             "group": {
                 "kind": "build",

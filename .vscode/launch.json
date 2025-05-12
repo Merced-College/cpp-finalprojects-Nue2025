@@ -13,6 +13,10 @@
                 "${workspaceFolder}/main.cpp",
                 "${workspaceFolder}/Database.cpp",
                 "${workspaceFolder}/DataHandler.cpp",
+                "${workspaceFolder}/Database.h",
+                "${workspaceFolder}/DataHandler.h",
+                "${workspaceFolder}/ParkSearch.cpp",
+                
                 "-o",
                 "${workspaceFolder}/main"
             ],

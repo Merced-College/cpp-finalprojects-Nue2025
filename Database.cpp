@@ -1,8 +1,8 @@
 // Database.cpp
-
 #include "Database.h"
+#include <string>
+using namespace std;
 
-//Constructor
 Database::Database() {
     parkName = "Unknown";
     stateName = "Unknown";
@@ -12,10 +12,11 @@ Database::Database() {
     recreationVisitors = -1;
     climate = "Unknown";
     description = "Unknown";
-}//End Database() constructor
+}
 
-Database::Database(string parkNameInput, string stateNameInput, string coordinateLocationInput, string dateEstablishedInput,
-                   string area2023Input, int recreationVisitorsInput, string climateInput, string descriptionInput) {
+Database::Database(string parkNameInput, string stateNameInput, string coordinateLocationInput,
+                   string dateEstablishedInput, string area2023Input, int recreationVisitorsInput,
+                   string climateInput, string descriptionInput) {
     parkName = parkNameInput;
     stateName = stateNameInput;
     coordinateLocation = coordinateLocationInput;
@@ -26,7 +27,7 @@ Database::Database(string parkNameInput, string stateNameInput, string coordinat
     description = descriptionInput;
 }
 
-//Setter section for the data.
+// Setters
 void Database::setParkName(string parkNameInput) { parkName = parkNameInput; }
 void Database::setStateName(string stateNameInput) { stateName = stateNameInput; }
 void Database::setCoordinateLocation(string coordinateLocationInput) { coordinateLocation = coordinateLocationInput; }
@@ -36,7 +37,7 @@ void Database::setRecreationVisitors(int recreationVisitorsInput) { recreationVi
 void Database::setClimate(string climateInput) { climate = climateInput; }
 void Database::setDescription(string descriptionInput) { description = descriptionInput; }
 
-//Getter section for the data.
+// Getters
 string Database::getParkName() const { return parkName; }
 string Database::getStateName() const { return stateName; }
 string Database::getCoordinateLocation() const { return coordinateLocation; }
@@ -47,16 +48,8 @@ string Database::getClimate() const { return climate; }
 string Database::getDescription() const { return description; }
 
 string Database::toString() const {
-    return "Park name: " + parkName + ", State: " + stateName + ", Location: " + coordinateLocation
-           + ", Established: " + dateEstablished + ", Area: " + area2023 + ", Visitors: " +
-           to_string(recreationVisitors) + ", Climate: " + climate + "\nDescription of " + parkName + ": " + description + "\n";
+    return "Park name: " + parkName + ", State: " + stateName + ", Location: " + coordinateLocation +
+           ", Established: " + dateEstablished + ", Area: " + area2023 + ", Visitors: " +
+           to_string(recreationVisitors) + ", Climate: " + climate +
+           "\nDescription of " + parkName + ": " + description + "\n";
 }
-
-//Needed AI to explain how to make a toString method so I could print out the information in a readable format.
-// This function is used to print the Database object in a readable format
-// It overrides the << operator to allow easy printing of the object
-ostream& operator<<(ostream& os, const Database& db) {
-    os << db.toString();
-    return os;
-}
-// This function is used to compare two Database objects for equality

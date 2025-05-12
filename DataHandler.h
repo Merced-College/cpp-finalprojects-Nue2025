@@ -2,14 +2,11 @@
 #ifndef DATAHANDLER_H
 #define DATAHANDLER_H
 
-#include <string>
 #include <vector>
+#include <string>
 #include "Database.h"
-using namespace std;
 
-class DataHandler {
-public:
-    static vector<Database> loadDataFromFile(const string& csvFileName); //We will have to return something along the lines of an ArrayList
-};
+//NOT using namespace std; to avoid polluting the global namespace, suggested by AI.
+std::vector<Database> loadDataFromFile(const std::string& tsvFileName);
 
-#endif
+#endif // DATAHANDLER_H
