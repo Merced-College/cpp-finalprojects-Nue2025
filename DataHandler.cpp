@@ -3,12 +3,12 @@
 #include <sstream>
 #include <iostream>
 #include <vector>
-#ifndef DATAHANDLER_H
-#define DATAHANDLER_H
+// #ifndef DATAHANDLER_H
+// #define DATAHANDLER_H
 
 using namespace std;
 
-vector<Database> DataHandler::loadDataFromFile(const string& filename) {
+vector<Database> loadDataFromFile(const string& filename) {
     vector<Database> parkList;
     ifstream file(filename);
 
@@ -56,4 +56,4 @@ vector<Database> DataHandler::loadDataFromFile(const string& filename) {
     file.close();
     return parkList;
 }
-    #endif // DATAHANDLER_H
+    // #endif // DATAHANDLER_H

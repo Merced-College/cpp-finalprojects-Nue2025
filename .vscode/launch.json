@@ -8,17 +8,17 @@
             "request": "launch",
             "program": "${workspaceFolder}/main",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${workspaceFolder}/main.cpp",
-                "${workspaceFolder}/Database.cpp",
-                "${workspaceFolder}/DataHandler.cpp",
-                "${workspaceFolder}/Database.h",
-                "${workspaceFolder}/DataHandler.h",
-                "${workspaceFolder}/ParkSearch.cpp",
-                
-                "-o",
-                "${workspaceFolder}/main"
+                // "-fdiagnostics-color=always",
+                // "-g",
+                // "${workspaceFolder}/main.cpp",
+                // "${workspaceFolder}/Database.cpp",
+                // "${workspaceFolder}/DataHandler.cpp",
+                // "${workspaceFolder}/Database.h",
+                // "${workspaceFolder}/DataHandler.h",
+                // "${workspaceFolder}/ParkSearch.cpp",
+                // "${workspaceFolder}/ParkSearch.h",
+                // "-o",
+                // "${workspaceFolder}/main"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

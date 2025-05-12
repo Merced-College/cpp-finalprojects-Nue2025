@@ -6,7 +6,8 @@
 #include <string>
 #include "Database.h"
 
+using namespace std;
 //NOT using namespace std; to avoid polluting the global namespace, suggested by AI.
-std::vector<Database> loadDataFromFile(const std::string& tsvFileName);
+vector<Database> loadDataFromFile(const std::string& filename);
 
 #endif // DATAHANDLER_H

@@ -37,11 +37,9 @@ void pauseTime(int seconds) {
 
 int main() {
     vector<Database> parkList1 = loadDataFromFile("nationalParkList04232025.tsv");
-    ParkSearch park1;
 
     string spaceTab = "    ";
     string spaceDash = "--------------------------------------------------------------------";
-    string notFinished = "Not Finished";
     const int SECONDS = 1;
 
     cout << "Welcome to the National Park Search and Trivia Game*!" << endl;
@@ -73,7 +71,7 @@ int main() {
                 cout << "Looking for " << stateResponse1 << "..." << endl;
                 pauseTime(SECONDS * 2);
 
-                Database* result = park1.searchByParkName(parkList1, stateResponse1);
+                Database* result = ParkSearch::searchByParkName(parkList1, stateResponse1); // Use class name
                 if (!result) {
                     cout << "Park not found" << endl;
                 } else {
@@ -81,7 +79,7 @@ int main() {
                     bool action1 = false;
                     string response1;
                     while (!action1) {
-                        Database* database1 = park1.searchByParkName(parkList1, stateResponse1);
+                        Database* database1 = ParkSearch::searchByParkName(parkList1, stateResponse1); // Use class name
                         cout << "Do you want any information for " << database1->getParkName() << " National Park? Type \"No\" to exit" << endl;
                         getline(cin, response1);
                         transform(response1.begin(), response1.end(), response1.begin(), ::tolower);
@@ -132,12 +130,11 @@ int main() {
                 cout << "State search:\nWhat state are you looking for?" << endl;
                 string state1;
                 getline(cin, state1);
-                ParkSearch park2;
-                park2.searchByStateName(parkList1, state1);
+                ParkSearch::searchByStateName(parkList1, state1); // Use class name
             } else if (nextAction.find("play") != string::npos || nextAction.find("game") != string::npos || nextAction.find("trivia") != string::npos || nextAction.find("something else") != string::npos) {
                 validActionSelected = true;
                 cout << "Trivia game coming soon!\nWelcome to the Trivia Game**! **in development." << endl;
-                Database* database2 = park1.searchByParkName(parkList1, "Yosemite");
+                Database* database2 = ParkSearch::searchByParkName(parkList1, "Yosemite"); // Use class name
                 if (database2) {
                     cout << database2->getClimate() << endl;
                     cout << "What *STATE* does this description belong to? " << endl;
