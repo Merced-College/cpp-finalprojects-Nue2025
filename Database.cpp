@@ -4,7 +4,7 @@
 #include <sstream>
 using namespace std;
 
-// Default constructor with default values.
+//Default constructor with default values.
 Database::Database() {
     parkName = "Unknown";
     stateName = "Unknown";
@@ -30,7 +30,7 @@ Database::Database(string parkNameInput, string stateNameInput, string coordinat
     description = descriptionInput;
 }
 
-// Setters
+//Setters
 void Database::setParkName(string parkNameInput) { parkName = parkNameInput; }
 void Database::setStateName(string stateNameInput) { stateName = stateNameInput; }
 void Database::setCoordinateLocation(string coordinateLocationInput) { coordinateLocation = coordinateLocationInput; }
@@ -40,7 +40,7 @@ void Database::setRecreationVisitors(int recreationVisitorsInput) { recreationVi
 void Database::setClimate(string climateInput) { climate = climateInput; }
 void Database::setDescription(string descriptionInput) { description = descriptionInput; }
 
-// Getters
+//Getters
 string Database::getParkName() const { return parkName; }
 string Database::getStateName() const { return stateName; }
 string Database::getCoordinateLocation() const { return coordinateLocation; }

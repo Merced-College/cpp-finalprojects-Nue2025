@@ -4,11 +4,11 @@
  * CPSC-25
  * Final Project: National Park Trivia and Search Engine Game!
  * Date: 5/13/2025
- * Short Description: A C++ program with a terminal-based search engine and trivia game.
+ * Short Description: A terminal-based search engine and trivia game for National Parks in the United States.
  */
 
 #include <iostream>
-#include <vector>
+#include <vector> //Vector data structure.
 #include <string>
 #include <cctype>
 #include "Database.h"  
@@ -109,10 +109,11 @@ public:
         }
     }
 
-    // Method to handle trivia game
+    // Method to handle trivia game, also having a memory address of the userInput, 
+    //parkList1 vector and the park1 ParkSearch class.
         static int triviaGame(istream& userInput, vector<Database>& parkList1, ParkSearch& park1) {
         string triviaResponse;
-        Database database2;
+        Database database2; //Creates a Database object to hold the park information, which we ue in the code.
         int numPoints = 0;
     
         cout << "Game 1!" << endl;
@@ -120,13 +121,13 @@ public:
         cout << "What *STATE* does the following climate belong to? ";
         Database* tempDatabase = park1.searchByParkName(parkList1, "Yosemite");
         if (tempDatabase != nullptr) {
-            database2 = *tempDatabase;
+            database2 = *tempDatabase; //A pointer to the Database object, which is how we can retrieve the data.
             cout << database2.getClimate() << endl;
             getline(userInput, triviaResponse);
-            // npos indicates "not found" when searching for substrings in a string.
+            // Used Github Copilot to explain: npos indicates "not found" when searching for substrings in a string.
             if (database2.getStateName().find(triviaResponse) != string::npos || triviaResponse.find(database2.getStateName()) != string::npos) {
                 cout << "Yes! You got it right! The state belongs to " << database2.getStateName() << endl;
-                numPoints++;
+                numPoints++; //Increments the number of points if the user gets it right.
             } else {
                 cout << "You got it wrong." << endl;
                 cout << " The correct state is " << database2.getStateName() << endl;
@@ -154,7 +155,8 @@ public:
         }
     
         cout << "Game 3!" << endl;
-        tempDatabase = park1.searchByParkName(parkList1, "Voyageurs");
+        //Reuses the old tempDatabase pointer from the Database class and does a binary search.
+        tempDatabase = park1.searchByParkName(parkList1, "Voyageurs"); 
         if (tempDatabase != nullptr) {
             database2 = *tempDatabase;
             cout << "The name of the park is " << database2.getParkName() << " National Park. It is located in the state of " << database2.getStateName() << endl;
@@ -178,8 +180,9 @@ public:
     // Main method to run the program
     static void main() {
         vector<Database> parkList1 = DataHandler::loadDataFromFile("nationalParkList04232025.tsv");
-        ParkSearch park1;
+        ParkSearch park1; //Creates a ParkSearch object to handle the search.
 
+        //Simple welcome message.
         cout << "Welcome to the National Park Search and Trivia Game!" << endl;
 
         bool inCenter = true;
@@ -191,19 +194,19 @@ public:
                 cout << "Do you want to search for a Park name, State name, or Play the Trivia Game? ";
                 string nextAction;
                 getline(cin, nextAction);
-                for (auto& c : nextAction) c = tolower(c); // Convert each character in the string to lowercase.
+                for (auto& c : nextAction) c = tolower(c); // Convert each character in the string to lowercase, which is why we have auto.
                 
                 if (nextAction.find("park") != string::npos) {
                     validActionSelected = true;
                     cout << "Welcome to the park search! ";
-                    parkSearch(cin, parkList1, park1);
+                    parkSearch(cin, parkList1, park1); //Passes in our userInput, a vector of Database objects, and the ParkSearch class into the parkSearch function.
                 } else if (nextAction.find("state") != string::npos) {
                     validActionSelected = true;
                     cout << "State search:" << endl;
-                    searchState(cin, parkList1);
+                    searchState(cin, parkList1); //Passes in our userInput and a vector of Database objects into the searchState function.
                 } else if (nextAction.find("play") != string::npos || nextAction.find("game") != string::npos || nextAction.find("trivia") != string::npos) {
                     validActionSelected = true;
-                    int numPoints = triviaGame(cin, parkList1, park1);
+                    int numPoints = triviaGame(cin, parkList1, park1); //Passes in our userInput, a vector of Database objects, and the ParkSearch class into the triviaGame function.
                     cout << "You scored " << numPoints << " points!" << endl;
                 } else if(nextAction.find("exit") != string::npos || nextAction.find("quit") != string::npos || nextAction.find("leave") != string::npos) {
                     cout << "Exiting the program. Goodbye!" << endl;
@@ -217,7 +220,7 @@ public:
     }
 };
 
-int main() {
+int main() { //Runs the main method which calls the Center class.
     Center::main();
     return 0;
 }

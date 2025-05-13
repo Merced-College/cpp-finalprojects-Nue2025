@@ -12,7 +12,7 @@
  */
 std::vector<Database> DataHandler::loadDataFromFile(const std::string& tsvFileName) {
     std::vector<Database> parkList;
-    try {
+    try { //Uses a data structure of ifstream to read the file from the TSV File.
         std::ifstream file(tsvFileName); //This is where the ifsstream library is used to read the file.
 
         if (!file.is_open()) { //This checks if the file is open. If it is NOT, it will throw an error.
@@ -65,9 +65,10 @@ std::vector<Database> DataHandler::loadDataFromFile(const std::string& tsvFileNa
 
         file.close(); // This closes the file after reading it.
     } catch (const std::exception& e) {
-        // If the file does not exist, it will print out an error message.
+        //If the file does not exist, it will print out an error message.
+        //std::cerr is used to print error messages to the standard error stream.
         std::cerr << "Error with loading file: " << e.what() << std::endl;
-        return {};
+        return {}; //Returns an empty vector if the file does not exist.
     }
     return parkList;
 }

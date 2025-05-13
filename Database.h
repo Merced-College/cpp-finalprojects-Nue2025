@@ -7,7 +7,7 @@
 using namespace std;
 
 class Database {
-private:
+private: //Creates private member variables.
     string parkName, stateName, coordinateLocation, dateEstablished, area2023;
     int recreationVisitors;
     string climate, description;
