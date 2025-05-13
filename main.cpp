@@ -179,6 +179,19 @@ public:
 
     // Main method to run the program
     static void main() {
+        /**********************************************************************************************************************
+		* Title: National Park List
+		* Author: Jacob Stopak
+		* Date: March 26, 2025
+		* Code version: 1.0
+		* Availability: https://www.downloadexcelfiles.com/us_en/download-excel-file-list-national-parks-us
+		* 
+		* Title: National Park List of Names and Descriptions (Edited from Jacob Stopak)
+		* Author: Nue Lopez
+		* Date: May 1, 2025
+		* Code version: 3.0
+		* Availability: https://docs.google.com/spreadsheets/d/1ziaFXhW1AH9-fRpfj2ejbEoWEulhMTGtHpQ8wXPhLpQ/edit?usp=sharing
+		*********************************************************************************************************************/
         vector<Database> parkList1 = DataHandler::loadDataFromFile("nationalParkList04232025.tsv");
         ParkSearch park1; //Creates a ParkSearch object to handle the search.
 
