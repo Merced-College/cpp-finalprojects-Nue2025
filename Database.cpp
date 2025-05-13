@@ -4,7 +4,7 @@
 #include <sstream>
 using namespace std;
 
-//Default constructor with default values.
+//Default constructor with default values and encapsulates the data.
 Database::Database() {
     parkName = "Unknown";
     stateName = "Unknown";
