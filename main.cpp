@@ -5,7 +5,7 @@
  * Date: 5/8/2025
  * Short Description: A C++ program with a terminal-based search engine
  * and trivia game.
- * As of 4/29/2025, I have built a simple TUI (Text User Interface) to 
+ * As of 5/12/2025, I have built a simple TUI (Text User Interface) to 
  * accommodate the user with searching a particular National Park, 
  * looking for a state, and implementing an interactive game. 
  * I need to create more classes and write code to help the user access
@@ -13,7 +13,7 @@
  * and longitude), and other facts about the national park.
  */
 
- // main.cpp - C++ version of Center.java
+// main.cpp - C++ version of Center.java
 // Author: Nue Lopez
 // Final Project: National Park Search Engine and Trivia Game!
 
