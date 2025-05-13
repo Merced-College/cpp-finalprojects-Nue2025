@@ -9,10 +9,10 @@
 
 class ParkSearch {
 public:
-    // Binary search by park name
+    // Binary search by park name will be implemented in the cpp class.
     static Database* searchByParkName(const std::vector<Database>& inputParkData, const std::string& keyParkName);
 
-    // Search by state name, returns a LinkedList (using std::list in C++)
+    // Search by state name, returns a LinkedList using std::list.
     static std::list<Database> searchByStateName(const std::vector<Database>& inputParkData, const std::string& keyState);
 
     // Merge Sort parks by state name

@@ -3,11 +3,14 @@
 #define DATAHANDLER_H
 
 #include <vector>
-#include <string>
-#include "Database.h"
+#include <string> //Handles strings.
+#include "Database.h" // Ensure that this includes the Database class.
 
-using namespace std;
-//NOT using namespace std; to avoid polluting the global namespace, suggested by AI.
-vector<Database> loadDataFromFile(const std::string& filename);
+
+class DataHandler {
+public:
+    // loadDataFromFile constructs the tsv file name and reads it to the user..
+    static std::vector<Database> loadDataFromFile(const std::string& tsvFileName);
+};
 
 #endif // DATAHANDLER_H

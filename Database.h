@@ -3,6 +3,7 @@
 #define DATABASE_H
 
 #include <string>
+#include <sstream>
 using namespace std;
 
 class Database {
@@ -12,7 +13,7 @@ private:
     string climate, description;
 
 public:
-    Database();
+    Database(); // Default constructor
     Database(string parkNameInput, string stateNameInput, string coordinateLocationInput,
              string dateEstablishedInput, string area2023Input, int recreationVisitorsInput,
              string climateInput, string descriptionInput);
@@ -37,7 +38,8 @@ public:
     string getClimate() const;
     string getDescription() const;
 
-    string toString() const;
+    string toString() const; // toString method to return a string representation of the object
+    bool parseFromLine(std::istringstream& stream); // Parses data from a file line
 };
 
 #endif // DATABASE_H
